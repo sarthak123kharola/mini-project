@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url("https://www.hdwallpapers.in/download/cypher_red_background_4k_hd_valorant-3840x2160.jpg");
+            background-size: 100%;
+        }
+
+        .chat-container {
+            max-width: 600px;
+            margin: 10px auto;
+            border: 3px solid #ba7c4d;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: #95a2ac;
+            color: rgb(46, 130, 203);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .chat-log {
+            height: 620px;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+
+        .chat-input {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #b9aeae;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 8px;
+            margin-right: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .chat-input button {
+            padding: 8px 12px;
+            background-color: #3c7cca;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .user-message {
+            background-color: #ab8e78;
+            padding: 8px;
+            text-align: right;
+            margin: 8px 0;
+            border-radius: 4px;
+        }
+
+        .bot-message {
+            background-color: #7da0cb;
+            text-align: left;
+            color: white;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 4px;
+        }
+    </style>
+    <title>GEHU/CSE Chatbot</title>
+</head>
+
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            CYPHER >> Only I could see you hide. Don't worry
+        </div>
+        <div class="chat-log" id="chatLog">
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById('userInput').value;
+            if (userInput.trim() !== '') {
+                appendMessage('user', userInput);
+                switch (userInput.toLowerCase()) {
+                    case 'hi':
+                        appendMessage('bot', "hello, what's up!");
+                        break;
+                    case 'hello':
+                        appendMessage('bot', "hi, how are you?");
+                        break;
+                    case 'hey':
+                        appendMessage('bot', "hi");
+                        break;
+                    case 'whats up':
+                        appendMessage('bot', "What can I do for you?");
+                        break;
+                    case 'how are you':
+                        appendMessage('bot', "I am fine. What about you?");
+                        break;
+                    case 'what is your name':
+                        appendMessage('bot', "You can call me CYPHER");
+                        break;
+                    case 'who are you':
+                        appendMessage('bot', "You can call me CYPHER");
+                        break;
+                    case 'what should i call you':
+                        appendMessage('bot', "I'm CYPHER your virtual assistant");
+                        break;
+                    case 'name':
+                        appendMessage('bot', "I'm CYPHER");
+                        break;
+                    case 'what is the meaning of your name':
+                        appendMessage('bot', "my name means put (a message) into secret writing encode.");
+                        break;
+                    case 'what is meaning of your name':
+                        appendMessage('bot', "my name means put (a message) into secret writing encode.");
+                        break;
+                    case 'meaning of your name':
+                        appendMessage('bot', "my name means put (a message) into secret writing encode.");
+                        break;
+                    case 'your name meaning':
+                        appendMessage('bot', "my name means put (a message) into secret writing encode.");
+                        break;
+                    case 'your name inspiration':
+                        appendMessage('bot', "my name inspiration comes from a tactical team based first person view game called VALORANT. The Moroccan information broker, Cypher is a one-man surveillance network who keeps tabs on the enemy's every move. No secret is safe. No maneuver goes unseen. Cypher is always watching.");
+                        break;
+                    case 'where does your name come from':
+                        appendMessage('bot', "my name inspiration comes from a tactical team based first person view game called VALORANT. The Moroccan information broker, Cypher is a one-man surveillance network who keeps tabs on the enemy's every move. No secret is safe. No maneuver goes unseen. Cypher is always watching.");
+                        break;
+                    case 'your name origion':
+                        appendMessage('bot', "my name inspiration comes from a tactical team based first person view game called VALORANT. The Moroccan information broker, Cypher is a one-man surveillance network who keeps tabs on the enemy's every move. No secret is safe. No maneuver goes unseen. Cypher is always watching.");
+                        break;
+                    case 'why this name':
+                        appendMessage('bot', "my name inspiration comes from a tactical team based first person view game called VALORANT. The Moroccan information broker, Cypher is a one-man surveillance network who keeps tabs on the enemy's every move. No secret is safe. No maneuver goes unseen. Cypher is always watching.");
+                        break;
+                    case 'what courses are available':
+                        appendMessage('bot', "Graphic Era University UG courses are BTech, BBA, B.Sc, B.Sc (Hons.), BA (Hons.), B.Com (Hons.), Some of the Graphic Era University PG courses are M.Sc, MBA, MTech, MA, MCA and MHM. The university offers Graphic Era University PhD courses in various specialisations.");
+                        break;
+                    case 'how many courses are there in this college':
+                        appendMessage('bot', "Graphic Era University UG courses are BTech, BBA, B.Sc, B.Sc (Hons.), BA (Hons.), B.Com (Hons.), Some of the Graphic Era University PG courses are M.Sc, MBA, MTech, MA, MCA and MHM. The university offers Graphic Era University PhD courses in various specialisations.");
+                        break;
+                    case 'courses':
+                        appendMessage('bot', "Graphic Era University UG courses are BTech, BBA, B.Sc, B.Sc (Hons.), BA (Hons.), B.Com (Hons.), Some of the Graphic Era University PG courses are M.Sc, MBA, MTech, MA, MCA and MHM. The university offers Graphic Era University PhD courses in various specialisations.");
+                        break;
+                    case 'course duration':
+                        appendMessage('bot', "Our college offers 4 year long Btech course and 3 and half year long BBA course.");
+                        break;
+                    case 'how long will be cse course':
+                        appendMessage('bot', "Our college offers 4 year long Btech course and 3 and half year long BBA course.");
+                        break;
+                    case 'how long will it take to complete course':
+                        appendMessage('bot', "Our college offers 4 year long Btech course and 3 and half year long BBA course.");
+                        break;
+                    case 'computer science course duration':
+                        appendMessage('bot', "Our college offers 4 year long Btech course and 3 and half year long BBA course.");
+                        break;
+                    case 'cs course duration':
+                        appendMessage('bot', "Our college offers 4 year long Btech course and 3 and half year long BBA course.");
+                        break;
+                    case 'meaning of cypher':
+                        appendMessage('bot', "put (a message) into secret writing encode.");
+                        break;
+                    case 'location':
+                        appendMessage('bot', "graphic era dehradun is located in 566/6, Bell Road, Society Area, Clement Town, Dehradun, Bharu Wala Grant, Uttarakhand 248002");
+                        break;
+                    case 'what is the location of the college':
+                        appendMessage('bot', "graphic era dehradun is located in 566/6, Bell Road, Society Area, Clement Town, Dehradun, Bharu Wala Grant, Uttarakhand 248002");
+                        break;
+                    case 'gehu location':
+                        appendMessage('bot', "graphic era dehradun is located in 566/6, Bell Road, Society Area, Clement Town, Dehradun, Bharu Wala Grant, Uttarakhand 248002");
+                        break;
+                    case 'geu location':
+                        appendMessage('bot', "graphic era dehradun is located in 566/6, Bell Road, Society Area, Clement Town, Dehradun, Bharu Wala Grant, Uttarakhand 248002");
+                        break;
+                    case 'graphic era location':
+                        appendMessage('bot', "graphic era dehradun is located in 566/6, Bell Road, Society Area, Clement Town, Dehradun, Bharu Wala Grant, Uttarakhand 248002");
+                        break;
+                    case 'semesters':
+                        appendMessage('bot', " There are two semesters in a year.");
+                        break;
+                    case 'how many semesters are there in a year':
+                        appendMessage('bot', "There are two semesters in a year.");
+                        break;
+                    case 'how many semesters one should study in a year':
+                        appendMessage('bot', "There are two semesters in a year.");
+                        break;
+                    case 'cypher':
+                        appendMessage('bot', "hello, what's up!");
+                        break;
+                    case 'semester':
+                        appendMessage('bot', "There are two semesters in a year.");
+                        break;
+                    case 'how many months are there in a semester':
+                        appendMessage('bot', "The single semester will be around 4 to 5 months with a proper semester break of around 15 to 20 days after the end of the semester.");
+                        break;
+                    case 'how long will be a single semester':
+                        appendMessage('bot', "The single semester will be around 4 to 5 months with a proper semester break of around 15 to 20 days after the end of the semester.");
+                        break;
+                    case 'entry requirements':
+                        appendMessage('bot', "Academic Level\n10th and 12th percentage (50%) or above with each subject (theory and practical) , and compulsory science and  mathematics score of ( 55%) or above.");
+                        break;
+                    case 'admission requirements':
+                        appendMessage('bot', "Academic Level\n10th and 12th percentage (50%) or above with each subject (theory and practical) , and compulsory science and  mathematics score of ( 55%) or above.");
+                        break;
+                    case 'classes':
+                        appendMessage('bot', "There may be three to four classes per day. Each class will be of 50 to 55 minutes.");
+                        break;
+                    case 'class':
+                        appendMessage('bot', "There may be three to four classes per day. Each class will be of 50 to 55 minutes.");
+                        break;
+                    case 'class duration':
+                        appendMessage('bot', "There may be three to four classes per day. Each class will be of 50 to 55 minutes.");
+                        break;
+                    case 'fun activities':
+                        appendMessage('bot', "Yes, Of course.  college not only provides excellent education but also encourage students to take part in different curriculum activities. The college conducts yearly programs like Sports meet, Carnival, Holi festival, and Christmas. \n Also our college has basketball court, badminton court, table tennis, chess, carrom board and many more refreshment zones.");
+                        break;
+                    case 'will there be any extra curriculum activities':
+                        appendMessage('bot', "Yes, Of course. college not only provides excellent education but also encourage students to take part in different curriculum activities. The college conducts yearly programs like Sports meet, Carnival, Holi festival, and Christmas. \n Also our college has basketball court, badminton court, table tennis, chess, carrom board and many more refreshment zones.");
+                        break;
+                    case 'does the college conducts any fun program':
+                        appendMessage('bot', "Yes, Of course. college not only provides excellent education but also encourage students to take part in different curriculum activities. The college conducts yearly programs like Sports meet, Carnival, Holi festival, and Christmas. \n Also our college has basketball court, badminton court, table tennis, chess, carrom board and many more refreshment zones.");
+                        break;
+                    case 'fees':
+                        appendMessage('bot', "you can contact ERP cell for detailed fee structure and allowences");
+                        break;
+                    case 'fee':
+                        appendMessage('bot', "you can contact ERP cell for detailed fee structure and allowences");
+                        break;
+                    case 'fees crieteria':
+                        appendMessage('bot', "you can contact ERP cell for detailed fee structure and allowences");
+                        break;
+                    case 'fees structure':
+                        appendMessage('bot', "you can contact ERP cell for detailed fee structure and allowences");
+                        break;
+                    case 'what is the fee structure':
+                        appendMessage('bot', "you can contact ERP cell for detailed fee structure and allowences");
+                        break;
+                    case 'how much is the college fee':
+                        appendMessage('bot', "you can contact ERP cell for detailed fee structure and allowences");
+                        break;
+                    case 'goodbye':
+                        appendMessage('bot', "Sad to see you go :( byeee!");
+                        break;
+                    case 'see you later':
+                        appendMessage('bot', "Sad to see you go :( byeee!");
+                        break;
+                    case 'i am leaving':
+                        appendMessage('bot', "Sad to see you go :( byeee!");
+                        break;
+                    case 'bye':
+                        appendMessage('bot', "Goodbye!");
+                        break;
+                    case 'i will talk to you later':
+                        appendMessage('bot', "  ok bye!");
+                        break;
+                    case 'thanks':
+                        appendMessage('bot', "Happy to help!");
+                        break;
+                    case 'thank you':
+                        appendMessage('bot', "Any time!");
+                        break;
+                    case 'awesome':
+                        appendMessage('bot', "Happy to help!");
+                        break;
+                    case 'thanks for helping me':
+                        appendMessage('bot', "My pleasure");
+                        break;
+                    case 'what is an array':
+                        appendMessage('bot', "An array is a data structure that stores a collection of elements, where each element can be accessed using an index or a key. The elements in an array are typically of the same data type, and they are stored in contiguous memory locations. This allows for efficient and direct access to any element in the array using its index.");
+                        break;
+                    case 'array':
+                        appendMessage('bot', "An array is a data structure that stores a collection of elements, where each element can be accessed using an index or a key. The elements in an array are typically of the same data type, and they are stored in contiguous memory locations. This allows for efficient and direct access to any element in the array using its index.");
+                        break;
+                    case 'explain array':
+                        appendMessage('bot', "An array is a data structure that stores a collection of elements, where each element can be accessed using an index or a key. The elements in an array are typically of the same data type, and they are stored in contiguous memory locations. This allows for efficient and direct access to any element in the array using its index.");
+                        break;
+                    case 'what is a linked list':
+                        appendMessage('bot', "A linked list is a data structure used in computer science to organize and store a collection of elements. Unlike arrays, linked lists do not require contiguous memory locations, and their elements (nodes) are connected by pointers or references.In a linked list, each node contains two components: data and a reference (or link) to the next node in the sequence. The last node typically has a null reference, indicating the end of the list. This structure allows for dynamic memory allocation, efficient insertion and deletion of elements, and easy traversal of the list.");
+                        break;
+                    case 'linked list':
+                        appendMessage('bot', "A linked list is a data structure used in computer science to organize and store a collection of elements. Unlike arrays, linked lists do not require contiguous memory locations, and their elements (nodes) are connected by pointers or references.In a linked list, each node contains two components: data and a reference (or link) to the next node in the sequence. The last node typically has a null reference, indicating the end of the list. This structure allows for dynamic memory allocation, efficient insertion and deletion of elements, and easy traversal of the list.");
+                        break;
+                    case 'explain linked list':
+                        appendMessage('bot', "A linked list is a data structure used in computer science to organize and store a collection of elements. Unlike arrays, linked lists do not require contiguous memory locations, and their elements (nodes) are connected by pointers or references.In a linked list, each node contains two components: data and a reference (or link) to the next node in the sequence. The last node typically has a null reference, indicating the end of the list. This structure allows for dynamic memory allocation, efficient insertion and deletion of elements, and easy traversal of the list.");
+                        break;
+                    case 'tell me about linked list':
+                        appendMessage('bot', "A linked list is a data structure used in computer science to organize and store a collection of elements. Unlike arrays, linked lists do not require contiguous memory locations, and their elements (nodes) are connected by pointers or references.In a linked list, each node contains two components: data and a reference (or link) to the next node in the sequence. The last node typically has a null reference, indicating the end of the list. This structure allows for dynamic memory allocation, efficient insertion and deletion of elements, and easy traversal of the list.");
+                        break;
+                    case 'what is oops':
+                        appendMessage('bot', "OOP stands for Object-Oriented Programming, which is a programming paradigm that uses the concept of objects to organize and structure code. Objects in OOP represent real-world entities, and the interactions between these objects help model the behavior of a system. The use of classes and objects provides a modular and organized way of designing and implementing software.Popular programming languages that support OOP include Java, C++, Python, and C#. Developers use these languages to create modular, maintainable, and scalable software by leveraging the principles of OOP. ");
+                        break;
+                    case 'oops':
+                        appendMessage('bot', "OOP stands for Object-Oriented Programming, which is a programming paradigm that uses the concept of objects to organize and structure code. Objects in OOP represent real-world entities, and the interactions between these objects help model the behavior of a system. The use of classes and objects provides a modular and organized way of designing and implementing software.Popular programming languages that support OOP include Java, C++, Python, and C#. Developers use these languages to create modular, maintainable, and scalable software by leveraging the principles of OOP.");
+                        break;
+                    case 'explain what is oops':
+                        appendMessage('bot', "OOP stands for Object-Oriented Programming, which is a programming paradigm that uses the concept of objects to organize and structure code. Objects in OOP represent real-world entities, and the interactions between these objects help model the behavior of a system. The use of classes and objects provides a modular and organized way of designing and implementing software.Popular programming languages that support OOP include Java, C++, Python, and C#. Developers use these languages to create modular, maintainable, and scalable software by leveraging the principles of OOP.");
+                        break;
+                    case 'explain oops':
+                        appendMessage('bot', "OOP stands for Object-Oriented Programming, which is a programming paradigm that uses the concept of objects to organize and structure code. Objects in OOP represent real-world entities, and the interactions between these objects help model the behavior of a system. The use of classes and objects provides a modular and organized way of designing and implementing software.Popular programming languages that support OOP include Java, C++, Python, and C#. Developers use these languages to create modular, maintainable, and scalable software by leveraging the principles of OOP.");
+                        break;
+                    case 'c language':
+                        appendMessage('bot', "C is a general-purpose, procedural programming language that was created in the early 1970s by Dennis Ritchie at Bell Labs. It has had a significant influence on many modern programming languages and is still widely used today, particularly in system programming, embedded systems, and low-level programming.");
+                        break;
+                    case 'c':
+                        appendMessage('bot', "C is a general-purpose, procedural programming language that was created in the early 1970s by Dennis Ritchie at Bell Labs. It has had a significant influence on many modern programming languages and is still widely used today, particularly in system programming, embedded systems, and low-level programming.");
+                        break;
+                    case 'explain what is c language':
+                        appendMessage('bot', "C is a general-purpose, procedural programming language that was created in the early 1970s by Dennis Ritchie at Bell Labs. It has had a significant influence on many modern programming languages and is still widely used today, particularly in system programming, embedded systems, and low-level programming.");
+                        break;
+                    case 'why c++ is better than c':
+                        appendMessage('bot', "It's not accurate to say that C++ is universally better than C or vice versa, as the suitability of a programming language depends on the specific use case, requirements, and the preferences of the developer. Both C and C++ have their strengths and weaknesses, and the choice between them depends on the goals of the project.");
+                        break;
+                    case 'is c++ better than c':
+                        appendMessage('bot', "It's not accurate to say that C++ is universally better than C or vice versa, as the suitability of a programming language depends on the specific use case, requirements, and the preferences of the developer. Both C and C++ have their strengths and weaknesses, and the choice between them depends on the goals of the project.");
+                        break;
+                    case 'c vs c++':
+                        appendMessage('bot', "While C has many advantages, it also lacks some features present in modern programming languages, such as object-oriented programming constructs. C++, a language derived from C, was developed to address some of these limitations by adding support for object-oriented programming.Learning C is valuable for understanding the fundamentals of programming and gaining insights into low-level system interactions. It remains a foundational language for many areas of computer science and software development.");
+                        break;
+                    case 'c++ vs c':
+                        appendMessage('bot', "While C has many advantages, it also lacks some features present in modern programming languages, such as object-oriented programming constructs. C++, a language derived from C, was developed to address some of these limitations by adding support for object-oriented programming.Learning C is valuable for understanding the fundamentals of programming and gaining insights into low-level system interactions. It remains a foundational language for many areas of computer science and software development.");
+                        break;
+                    case 'java':
+                        appendMessage('bot', "Java is a high-level, object-oriented, and versatile programming language that was designed to be platform-independent, allowing developers to write code that can run on various platforms without modification. It was developed by James Gosling and his team at Sun Microsystems and released in 1995.");
+                        break;
+                    case 'what is java':
+                        appendMessage('bot', "Java is a high-level, object-oriented, and versatile programming language that was designed to be platform-independent, allowing developers to write code that can run on various platforms without modification. It was developed by James Gosling and his team at Sun Microsystems and released in 1995.");
+                        break;
+                    case 'explain what is java':
+                        appendMessage('bot', "Java is a high-level, object-oriented, and versatile programming language that was designed to be platform-independent, allowing developers to write code that can run on various platforms without modification. It was developed by James Gosling and his team at Sun Microsystems and released in 1995.");
+                        break;
+                    case 'explain java':
+                        appendMessage('bot', "Java is a high-level, object-oriented, and versatile programming language that was designed to be platform-independent, allowing developers to write code that can run on various platforms without modification. It was developed by James Gosling and his team at Sun Microsystems and released in 1995.");
+                        break;
+                    case 'what is an os':
+                        appendMessage('bot', "An operating system (OS) is a software system that acts as an intermediary between computer hardware and the computer user. It provides a set of services and functionalities to manage and coordinate the various components of a computer system. Common examples of operating systems include Microsoft Windows, macOS, Linux, and Unix. Operating systems are foundational components of modern computing, enabling users to run applications, access and manage data, and interact with computer hardware in an efficient and user-friendly manner.");
+                        break;
+                    case 'explain what is os':
+                        appendMessage('bot', "An operating system (OS) is a software system that acts as an intermediary between computer hardware and the computer user. It provides a set of services and functionalities to manage and coordinate the various components of a computer system. Common examples of operating systems include Microsoft Windows, macOS, Linux, and Unix. Operating systems are foundational components of modern computing, enabling users to run applications, access and manage data, and interact with computer hardware in an efficient and user-friendly manner.");
+                        break;
+                    case 'os':
+                        appendMessage('bot', "An operating system (OS) is a software system that acts as an intermediary between computer hardware and the computer user. It provides a set of services and functionalities to manage and coordinate the various components of a computer system. Common examples of operating systems include Microsoft Windows, macOS, Linux, and Unix. Operating systems are foundational components of modern computing, enabling users to run applications, access and manage data, and interact with computer hardware in an efficient and user-friendly manner.");
+                        break;
+                    case 'explain what is os':
+                        appendMessage('bot', "An operating system (OS) is a software system that acts as an intermediary between computer hardware and the computer user. It provides a set of services and functionalities to manage and coordinate the various components of a computer system. Common examples of operating systems include Microsoft Windows, macOS, Linux, and Unix. Operating systems are foundational components of modern computing, enabling users to run applications, access and manage data, and interact with computer hardware in an efficient and user-friendly manner.");
+                        break;
+                    case 'what is a binary tree':
+                        appendMessage('bot', "A binary tree is a hierarchical data structure composed of nodes, where each node has at most two children, referred to as the left child and the right child. The topmost node in a binary tree is called the root, and nodes with no children are called leaves. The structure of a binary tree is such that each node can have zero, one, or two children.Binary trees are used in various algorithms and data structures, such as binary search trees for efficient searching, expression trees for representing mathematical expressions, and heap data structures for priority queue implementations.");
+                        break;
+                    case 'explain binary tree':
+                        appendMessage('bot', "A binary tree is a hierarchical data structure composed of nodes, where each node has at most two children, referred to as the left child and the right child. The topmost node in a binary tree is called the root, and nodes with no children are called leaves. The structure of a binary tree is such that each node can have zero, one, or two children.Binary trees are used in various algorithms and data structures, such as binary search trees for efficient searching, expression trees for representing mathematical expressions, and heap data structures for priority queue implementations.");
+                        break;
+                    case 'binary tree':
+                        appendMessage('bot', "A binary tree is a hierarchical data structure composed of nodes, where each node has at most two children, referred to as the left child and the right child. The topmost node in a binary tree is called the root, and nodes with no children are called leaves. The structure of a binary tree is such that each node can have zero, one, or two children.Binary trees are used in various algorithms and data structures, such as binary search trees for efficient searching, expression trees for representing mathematical expressions, and heap data structures for priority queue implementations.");
+                        break;
+                    case 'explain what is a binary tree':
+                        appendMessage('bot', "A binary tree is a hierarchical data structure composed of nodes, where each node has at most two children, referred to as the left child and the right child. The topmost node in a binary tree is called the root, and nodes with no children are called leaves. The structure of a binary tree is such that each node can have zero, one, or two children.Binary trees are used in various algorithms and data structures, such as binary search trees for efficient searching, expression trees for representing mathematical expressions, and heap data structures for priority queue implementations.");
+                        break;
+                    case 'explain what is binary tree':
+                        appendMessage('bot', "A binary tree is a hierarchical data structure composed of nodes, where each node has at most two children, referred to as the left child and the right child. The topmost node in a binary tree is called the root, and nodes with no children are called leaves. The structure of a binary tree is such that each node can have zero, one, or two children.Binary trees are used in various algorithms and data structures, such as binary search trees for efficient searching, expression trees for representing mathematical expressions, and heap data structures for priority queue implementations.");
+                        break;
+                    case 'what is data structure':
+                        appendMessage('bot', "A data structure is a way of organizing, storing, and managing data to perform operations efficiently. It defines a set of rules and algorithms for organizing data in a way that allows for quick and effective retrieval, insertion, deletion, and manipulation of the data. Data structures are fundamental to computer science and are used to solve a wide range of computational problems.Understanding the characteristics and use cases of different data structures is essential for designing efficient algorithms and solving computational problems in software development and computer science. The choice of a data structure depends on the specific requirements of a given task or problem.");
+                        break;
+                    case 'data structures':
+                        appendMessage('bot', "A data structure is a way of organizing, storing, and managing data to perform operations efficiently. It defines a set of rules and algorithms for organizing data in a way that allows for quick and effective retrieval, insertion, deletion, and manipulation of the data. Data structures are fundamental to computer science and are used to solve a wide range of computational problems.Understanding the characteristics and use cases of different data structures is essential for designing efficient algorithms and solving computational problems in software development and computer science. The choice of a data structure depends on the specific requirements of a given task or problem.");
+                        break;
+                    case 'data structure':
+                        appendMessage('bot', "A data structure is a way of organizing, storing, and managing data to perform operations efficiently. It defines a set of rules and algorithms for organizing data in a way that allows for quick and effective retrieval, insertion, deletion, and manipulation of the data. Data structures are fundamental to computer science and are used to solve a wide range of computational problems.Understanding the characteristics and use cases of different data structures is essential for designing efficient algorithms and solving computational problems in software development and computer science. The choice of a data structure depends on the specific requirements of a given task or problem.");
+                        break;
+                    case 'ds':
+                        appendMessage('bot', "A data structure is a way of organizing, storing, and managing data to perform operations efficiently. It defines a set of rules and algorithms for organizing data in a way that allows for quick and effective retrieval, insertion, deletion, and manipulation of the data. Data structures are fundamental to computer science and are used to solve a wide range of computational problems.Understanding the characteristics and use cases of different data structures is essential for designing efficient algorithms and solving computational problems in software development and computer science. The choice of a data structure depends on the specific requirements of a given task or problem.");
+                        break;
+                    case 'explain what is data structure':
+                        appendMessage('bot', "A data structure is a way of organizing, storing, and managing data to perform operations efficiently. It defines a set of rules and algorithms for organizing data in a way that allows for quick and effective retrieval, insertion, deletion, and manipulation of the data. Data structures are fundamental to computer science and are used to solve a wide range of computational problems.Understanding the characteristics and use cases of different data structures is essential for designing efficient algorithms and solving computational problems in software development and computer science. The choice of a data structure depends on the specific requirements of a given task or problem.");
+                        break;
+                    case 'tell me about yourself':
+                        appendMessage('bot', "I'm CYPHER your virtual assistant");
+                        break;
+                    case 'type nothing':
+                        appendMessage('bot', "  ");
+                        break;
+                    case 'blank':
+                        appendMessage('bot', "  ");
+                        break;
+                    case 'blank space':
+                        appendMessage('bot', "  ");
+                        break;
+                    case 'good':
+                        appendMessage('bot', "uhh thanks");
+                        break;
+                    case 'nice':
+                        appendMessage('bot', ":)");
+                        break;
+                    case 'cypher say something':
+                        appendMessage('bot', "I know exactly where you are!");
+                        break;
+                    case 'say something':
+                        appendMessage('bot', "I know exactly where you are!");
+                        break;
+                    case 'say your dialouge':
+                        appendMessage('bot', "Only I could see you hide. Don't worry");
+                        break;
+                    case 'your dialouge':
+                        appendMessage('bot', "Only I could see you hide. Don't worry");
+                        break;
+                    case 'dialouge':
+                        appendMessage('bot', "Only I could see you hide. Don't worry");
+                        break;
+                    default:
+                        appendMessage('bot', "Not sure I understand");
+                        break;
+                }
+                document.getElementById('userInput').value = '';
+            }
+        }
+
+        function appendMessage(sender, message) {
+            var chatLog = document.getElementById('chatLog');
+            var messageDiv = document.createElement('div');
+            messageDiv.className = sender === 'user' ? 'user-message' : 'bot-message';
+            messageDiv.textContent = message;
+            chatLog.appendChild(messageDiv);
+        }
+    </script>
+</body>
+
+</html>
